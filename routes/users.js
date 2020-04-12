@@ -14,7 +14,7 @@ router.post('/user_login',(req,res)=>{
 				if(result){
 					const username  = result.username;
 					// token
-					const token = jwt.sign({id:result._id,username:result.admin},process.env.TOKEN_SALT,{expiresIn:"2 days"});
+					const token = jwt.sign({id:result._id,username:result.admin},'salt_string123',{expiresIn:"2 days"});
 					
 					bcrypt.compare(req.body.password,result.password,(error,result)=>{
 						res.status(200).json({status:1,message:"success",token:token,username:username});	
