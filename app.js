@@ -23,4 +23,4 @@ const projects = require('./routes/projects');
 app.use('/users',users);
 app.use('/projects',projects);
 
-app.listen(process.env.SERVER_PORT,()=>{ console.log("server has been started @ "+process.env.SERVER_PORT); console.log('Database is connect ...');  });
+app.listen(3434||3535,()=>{ console.log("server has been started @ "+3434); console.log('Database is connect ...');  });
