@@ -3,7 +3,7 @@ module.exports = (req,res,next)=>{
 	
 	var token = req.headers.authentication;
 	try{
-		jwtAuth.verify(token,process.env.TOKEN_SALT);
+		jwtAuth.verify(token,'salt_string123');
 		req.validToken=true;
 		next();
 	}catch(error){
