@@ -106,7 +106,9 @@ router.post('/create_project',tokenAuth,(req,res,next)=>{
 				
 		
 		}else{
-			if(req.body.gallery !== undefined){
+			
+			
+			if(req.body.gallery.length){
 				var galleryFiles = req.body.gallery;
 				galleryFiles=galleryFiles.split('|');
 				console.log(galleryFiles);
@@ -212,7 +214,7 @@ router.post('/update_project',tokenAuth,async (req,res,next)=>{
 			}else{
 				
 				
-				if(req.body.gallery !== undefined){
+				if(req.body.gallery.length){
 				var galleryFiles = req.body.gallery;
 				galleryFiles=galleryFiles.split('|');
 				console.log(galleryFiles);
